@@ -116,12 +116,7 @@ const s3 = (p) => {
         // 3Dを描画
         p.image(pg3D, 0, 0, p.width, p.height);
 
-        // 2Dキャンバス：残像の円
-        p.noStroke();
-        p.fill(0, 30);
 
-        p.fill("#C5E8F2");
-        p.ellipse(p.mouseX, p.mouseY, 40, 40);
 
         for (let c of crosses) {
             c.update();

@@ -58,6 +58,13 @@ let myp5 = new p5((p) => {
             ball.checkMouse();
             ball.display();
         }
+
+        // 2Dキャンバス：残像の円
+        p.noStroke();
+        p.fill(0, 30);
+
+        p.fill("#C5E8F2");
+        p.ellipse(p.mouseX, p.mouseY, 40, 40);
     };
 
     class Ball {
