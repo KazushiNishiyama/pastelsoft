@@ -1,0 +1,533 @@
+/* すべての要素の余白とパディングをリセット */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    /* 基本フォントサイズをリセット */
+    font: inherit;
+    /* フォント設定を継承 */
+    vertical-align: baseline;
+    /* 垂直位置をリセット */
+}
+
+/* HTML5要素のdisplayをリセット */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* bodyの行の高さをリセット */
+body {
+    line-height: 1;
+}
+
+/* リストのマーカーを非表示 */
+ol,
+ul {
+    list-style: none;
+}
+
+/* 引用符をリセット */
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+/* 表の余白をリセット */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* PastelSoft固定ヘッダー */
+.fixed-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #fce4ec;
+    /* 優しいピンク */
+    border-bottom: 1px solid #f8bbd0;
+    padding: 1em;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 0 0 12px 12px;
+    z-index: 1000;
+}
+
+/* ナビゲーション */
+.fixed-header ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5em;
+    justify-content: right;
+    margin-right: 40px;
+}
+
+.fixed-header a {
+    color: #607D8B;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.3em 0.6em;
+    border-radius: 8px;
+    transition: background 0.3s, color 0.3s;
+}
+
+.fixed-header a:hover {
+    background: #f8bbd0;
+    /* ホバーで少し濃いパステル */
+    color: #333;
+}
+
+.ball-button-container {
+    position: fixed;
+    top: 50px;
+    right: 2vw;
+    z-index: 11;
+}
+
+.ball-button-container {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.pastel-button {
+    background: linear-gradient(135deg, #ffe4ec, #e0f7fa);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    color: #555;
+    transition: all 0.3s ease;
+}
+
+.pastel-button:hover {
+    background: linear-gradient(135deg, #ffd1e3, #b2ebf2);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+}
+
+.pastel-button:active {
+    transform: translateY(0);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+    position: absolute;
+    top: 420px;
+    left: 16vw;
+    font-size: 80px;
+    font-weight: bold;
+    pointer-events: none;
+    color: #C5E8F2
+}
+
+.title2 {
+    position: absolute;
+    top: 510px;
+    left: 26.5vw;
+    color: #607D8B;
+    font-size: 22px;
+    font-weight: bold;
+    pointer-events: none;
+    /* これでクリックを透過 */
+}
+
+.profile {
+    width: 85%;
+    max-width: 900px;
+    margin: 150px auto 0 auto;
+    background: #ffffffcc;
+    /* 白に少し透明感 */
+    border: 1px solid #e0f0f5;
+    /* やさしいブルー系の枠線 */
+    border-radius: 20px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+    padding: 2.5rem;
+
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.profile.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.profile-title {
+    margin: 0 auto 2rem auto;
+    font-size: 28px;
+    padding-bottom: 0.5rem;
+    width: fit-content;
+    border-bottom: 2px solid #a9d1e6;
+    /* 淡いブルーアクセント */
+    color: #444;
+}
+
+.profile-content {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.profile-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.icon {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #e0f0f5;
+    /* フレームに柔らかい色 */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.name {
+    margin-top: 1rem;
+    font-size: 22px;
+    font-weight: 500;
+    color: #555;
+}
+
+.profile-right {
+    max-width: 400px;
+}
+
+.profile-right p {
+    text-align: left;
+    font-size: 17px;
+    margin: 0.75rem 0;
+    color: #555;
+    line-height: 1.6;
+}
+
+.profile-right p:first-child {
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .profile-content {
+        flex-direction: column;
+    }
+
+    .profile-right p {
+        text-align: center;
+    }
+}
+
+.skill {
+    text-align: center;
+    margin: 200px auto 0 auto;
+    width: 85%;
+    max-width: 900px;
+    background: #ffffffcc;
+    /* やさしい透明感 */
+    border: 1px solid #e0f0f5;
+    /* 淡いブルーのボーダー */
+    border-radius: 20px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+    padding: 2.5rem;
+
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.skill.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.skill-title {
+    margin: 0 auto 2rem auto;
+    font-size: 28px;
+    padding-bottom: 0.5rem;
+    width: fit-content;
+    border-bottom: 2px solid #a9d1e6;
+    /* アクセントブルー */
+    color: #444;
+}
+
+.skill-img {
+    width: 90%;
+    max-width: 700px;
+    margin-top: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.portfolio {
+    width: 60%;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 200px;
+}
+
+.portfolio-title {
+    font-size: 32px;
+    text-align: center;
+    color: #444;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #a9d1e6;
+    /* やさしいブルーの下線 */
+    width: fit-content;
+    margin: 0 auto 3rem auto;
+}
+
+.work {
+    margin-top: 60px;
+    background: linear-gradient(135deg, #ffffff, #fef6f9);
+    border-radius: 24px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 1.5rem;
+}
+
+.work.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.work-left {
+    flex: 1 1 300px;
+    text-align: center;
+}
+
+.work-img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.work-right {
+    flex: 2 1 400px;
+    padding: 2rem;
+}
+
+.work-title {
+    display: inline-block;
+    font-size: 28px;
+    text-align: center;
+    margin-top: 0;
+    border-bottom: 2px solid #f4c2d7;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+    color: #555;
+}
+
+.work-detail p,
+.work-right p {
+    margin: 1rem 0;
+    color: #666;
+    line-height: 1.6;
+}
+
+.work-right a {
+    display: inline-block;
+    margin-top: 1rem;
+    text-decoration: none;
+    color: #7aa9b8;
+    font-weight: 500;
+    border-bottom: 1px dashed #7aa9b8;
+    transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.work-right a:hover {
+    color: #4c7c87;
+    border-color: #4c7c87;
+}
+
+@media (max-width: 768px) {
+    .work {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .work-right {
+        padding: 1.5rem;
+    }
+}
+
+.contact {
+    width: 85%;
+    max-width: 700px;
+    margin: 200px auto 100px auto;
+    background: #ffffffcc;
+    /* やわらかい白背景 */
+    border: 1px solid #e0f0f5;
+    border-radius: 20px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+    padding: 2.5rem;
+    text-align: center;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+
+
+.contact.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+.contact-title {
+    font-size: 28px;
+    margin: 0 auto 2rem auto;
+    padding-bottom: 0.5rem;
+    width: fit-content;
+    border-bottom: 2px solid #a9d1e6;
+    /* 淡ブルーの下線 */
+    color: #444;
+}
+
+.contact-info p {
+    font-size: 18px;
+    margin: 1rem 0;
+    color: #555;
+    line-height: 1.6;
+}
+
+.contact-info p strong {
+    color: #333;
+}
+
+#canvas-container2 {
+    position: absolute;
+    z-index: -1;
+}
+
+#canvas-container3 {
+    position: absolute;
+    z-index: -1;
+}
+
+#canvas-container4 {
+    position: fixed;
+    z-index: 10;
+    pointer-events: none;
+}

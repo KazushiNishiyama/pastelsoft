@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="jp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>p5 sample</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.js"></script>
+    <script src="sketch.js"></script>
+    <script src="sketch3.js"></script>
+    <script src="sketch4.js"></script>
+    <script src="animation.js"></script>
+
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+    <header class="fixed-header">
+        <nav>
+            <ul>
+
+                <li><a href="#profile">Profile</a></li>
+                <li><a href="#skill">Skill</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div id="canvas-container4">
+    </div>
+    <div class="ball-button-container">
+        <Button id="addBallBtn" class="pastel-button">ボール追加</Button>
+        <Button id="clearBallsBtn" class="pastel-button">ボール削除</Button>
+    </div>
+    <div>
+        <h1 class="title">PastelSoft</h1>
+        <h2 class="title2">Unity/Web Creator</h2>
+        <div id="canvas-container">
+        </div>
+    </div>
+    <div id="canvas-container3">
+
+    </div>
+    <div class="profile" id="profile">
+        <h2 class="profile-title">Profile</h2>
+        <div class="profile-content">
+            <div class="profile-left">
+                <img src="img/icon.jpg" class="icon">
+                <p class="name">西山和志</p>
+            </div>
+            <div class="profile-right">
+                <p>Unity/Web Creator</p>
+                <p>合同会社SimArthur CTO</p>
+                <p>PastelSoft 代表</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="skill" id="skill">
+        <h2 class="skill-title">SKILL</h2>
+        <img src="img/skill2.png" class="skill-img">
+    </div>
+    <div class="portfolio" id="portfolio">
+        <h2 class="portfolio-title">Portfolio</h2>
+
+        <div class="portfolio-container">
+
+            <div class="work">
+                <div class="work-left">
+                    <img src="img/simarthur.png" class="work-img">
+                </div>
+                <div class="work-right">
+                    <h2 class="work-title">SimArthur</h2>
+                    <p>合同会社SimArhurのCTOとして国立循環器病センターと共同研究開発をしている循環動態シミュレーションソフト</p>
+                    <p>WebDesign/Coding</p>
+                    <a href="https://simarthur.jp/">https://simarthur.jp/</a>
+                </div>
+            </div>
+            <div class="work">
+                <div class="work-left">
+                    <img src="img/business.png" class="work-img">
+                </div>
+                <div class="work-right">
+                    <h2 class="work-title">ビジネスタイガーサミット</h2>
+                    <div class="work-border"></div>
+                    <p>TOKYO MXで放送中のビジネスタイガーサミットのホームページを制作</p>
+                    <p>Web Coding</p>
+                    <a href="https://business-tigersummit.com/">https://business-tigersummit.com/</a>
+                </div>
+            </div>
+            <div class="work">
+                <div class="work-left">
+                    <img src="img/musicjam.png" class="work-img">
+                </div>
+                <div class="work-right">
+                    <h2 class="work-title">MUSIC JAM</h2>
+                    <div class="work-border"></div>
+                    <p>MUSIC JAM千葉様のホームページの改修を担当</p>
+                    <p>Web Coding/WordPress</p>
+                    <a href="https://chiba.musicjam.jp/">https://chiba.musicjam.jp/</a>
+                </div>
+            </div>
+            <div class="work">
+                <div class="work-left">
+                    <img src="img/fukushi.png" class="work-img">
+                </div>
+                <div class="work-right">
+                    <h2 class="work-title">株式会社ゴービヨンドネクスト</h2>
+                    <p>セミナー予約システムを制作</p>
+                    <p>Web Coding/WordPress</p>
+                    <a href="https://musicjam.jp/next/">https://musicjam.jp/next/</a>
+                </div>
+            </div>
+            <div class="work">
+                <div class="work-left">
+                    <img src="img/gobeyond.png" class="work-img">
+                </div>
+                <div class="work-right">
+                    <h2 class="work-title">株式会社ゴービヨンドネクスト</h2>
+                    <p>株式会社ゴービヨンドネクスト様のホームページを制作</p>
+                    <p>Web Coding/WordPress</p>
+                    <a href="https://musicjam.jp/next/">https://musicjam.jp/next/</a>
+                </div>
+            </div>
+            <div class="work">
+                <div class="work-left">
+                    <video src="img/moonart.mp4" class="work-img" controls></video>
+                </div>
+                <div class="work-right">
+                    <h2 class="work-title">ムーンアートナイト下北沢</h2>
+                    <p>ムーンアートナイト下北沢で展示を行ったデジタルアート作品を制作</p>
+                    <p>ArtDirector/Unity Enginner</p>
+                    <a href="https://senrogai.com/event/moonartnightfes_details/">ムーンアートナイト下北沢</a>
+                </div>
+            </div>
+            <div class="work">
+                <div class="work-left">
+                    <video src="img/shooting.mp4" class="work-img" controls></video>
+                </div>
+                <div class="work-right">
+                    <h2 class="work-title">シューティングゲーム</h2>
+                    <p>下北沢のイベントで展示を行ったシューティングゲームを制作</p>
+                    <p>ArtDirector/Planner/Unity Enginner</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="contact" id="contact">
+        <h2 class="contact-title">Contact</h2>
+        <div class="contact-info">
+            <p><strong>代表:</strong> 西山和志</p>
+            <p><strong>Email:</strong> 16rd136@ms.dendai.ac.jp</p>
+        </div>
+    </div>
+</body>
+<script>
+
+</script>
+
+</html>
