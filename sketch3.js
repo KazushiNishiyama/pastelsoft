@@ -62,6 +62,14 @@ const s2 = (p) => {
                 p.random(15, 30)
             ));
         }
+
+        // スクロールイベントで加速度を与える
+        window.addEventListener("scroll", () => {
+            for (let c of crosses) {
+                // 既存の速度にランダムな加速を加える
+                c.angularVelocity += p.random(-0.05, 0.05);
+            }
+        });
     };
 
     p.draw = () => {

@@ -15,7 +15,7 @@ let myp5 = new p5((p) => {
         ];
 
         // 初期3つ
-        for (let i = 0; i < 3; i++) {
+        for (let i = 0; i < 30; i++) {
             balls.push(makeRandomBall());
         }
 
@@ -35,7 +35,7 @@ let myp5 = new p5((p) => {
             let x = p.random(50, p.width - 50);
             let colorChoice = p.floor(p.random(colorSets.length));
             let fillColor = colorSets[colorChoice][p.floor(p.random(2))];
-            return new Ball(x, 50, fillColor);
+            return new Ball(x, p.random(-150, 150), fillColor);
         }
     };
 
