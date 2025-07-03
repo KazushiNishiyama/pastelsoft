@@ -1,18 +1,16 @@
 const s2 = (p) => {
-    // Cross クラス
     class Cross {
-        constructor(x, y, size) {
-            this.x = x;
-            this.y = y;
+        constructor(xRatio, yRatio, size) {
+            this.xRatio = xRatio; // 横比率
+            this.yRatio = yRatio; // 縦比率
             this.size = size;
             this.angle = 0;
             this.angularVelocity = 0;
 
-            // カラーパターンをランダムに選ぶ
             const colorSets = [
-                ['#AEEEEE', '#FFB6C1'], // 水色 × ピンク
-                ['#AEEEEE', '#FFDAB9'], // 水色 × オレンジ
-                ['#FFB6C1', '#FFDAB9']  // ピンク × オレンジ
+                ['#AEEEEE', '#FFB6C1'],
+                ['#AEEEEE', '#FFDAB9'],
+                ['#FFB6C1', '#FFDAB9']
             ];
             const choice = p.floor(p.random(colorSets.length));
             this.color1 = colorSets[choice][0];
@@ -20,6 +18,10 @@ const s2 = (p) => {
         }
 
         update() {
+            // 毎フレーム再計算
+            this.x = this.xRatio * p.width;
+            this.y = this.yRatio * p.height;
+
             let d = p.dist(p.mouseX, p.mouseY, this.x, this.y);
             if (d < this.size * 1.5) {
                 if (p.abs(this.angularVelocity) < 0.1) {
@@ -38,11 +40,9 @@ const s2 = (p) => {
 
             p.strokeWeight(4);
 
-            // 1本目の線
             p.stroke(this.color1);
             p.line(-this.size, -this.size, this.size, this.size);
 
-            // 2本目の線
             p.stroke(this.color2);
             p.line(this.size, -this.size, -this.size, this.size);
 
@@ -53,33 +53,47 @@ const s2 = (p) => {
     let crosses = [];
 
     p.setup = () => {
-        const cnv = p.createCanvas(p.windowWidth, 4500);
+        const cnv = p.createCanvas(p.windowWidth, document.body.scrollHeight - 900);
         cnv.parent('canvas-container3');
+
         for (let i = 0; i < 60; i++) {
+            const x = p.random(50, p.width - 50);
+            const y = p.random(50, p.height - 50);
+
             crosses.push(new Cross(
-                p.random(50, p.width - 50),
-                p.random(50, p.height - 50),
+                x / p.width,  // 比率で保存
+                y / p.height,
                 p.random(15, 30)
             ));
         }
 
-        // スクロールイベントで加速度を与える
+        // スクロールイベントで加速度
         window.addEventListener("scroll", () => {
             for (let c of crosses) {
-                // 既存の速度にランダムな加速を加える
                 c.angularVelocity += p.random(-0.05, 0.05);
             }
         });
     };
 
     p.draw = () => {
+        // キャンバスの高さは固定だが、幅は動的
+        if (p.width !== p.windowWidth) {
+            p.resizeCanvas(p.windowWidth, document.body.scrollHeight);
+            console.log("a");
+            console.log(document.body.scrollHeight);
+        }
+        p.resizeCanvas(p.windowWidth, document.body.scrollHeight - 900);
+
         p.background("#f7fbfc");
 
         for (let c of crosses) {
             c.update();
             c.display();
         }
+    };
 
+    p.windowResized = () => {
+        p.resizeCanvas(p.windowWidth, 4500);
     };
 };
 

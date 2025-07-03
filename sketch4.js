@@ -3,6 +3,7 @@ let myp5 = new p5((p) => {
     let lastScrollY;
 
     p.setup = function () {
+
         let cnv = p.createCanvas(p.windowWidth, p.windowHeight - 14);
         cnv.parent('canvas-container4');
 
@@ -40,6 +41,14 @@ let myp5 = new p5((p) => {
     };
 
     p.draw = function () {
+        // キャンバスの高さは固定だが、幅は動的
+        if (p.width !== p.windowWidth) {
+            p.resizeCanvas(p.windowWidth, p.windowHeight);
+        }
+        // スマホ幅なら無効
+        if (p.windowWidth <= 768) {
+            return;
+        }
         p.clear();
 
         let currentScrollY = window.scrollY;

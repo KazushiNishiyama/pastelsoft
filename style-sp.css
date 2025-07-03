@@ -1,4 +1,4 @@
-@media screen and (min-width:769px) {
+@media screen and (max-width:768px) {
 
     /* すべての要素の余白とパディングをリセット */
     html,
@@ -145,17 +145,7 @@
 
     /* PastelSoft固定ヘッダー */
     .fixed-header {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        background: #fce4ec;
-        /* 優しいピンク */
-        border-bottom: 1px solid #f8bbd0;
-        padding: 1em;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        border-radius: 0 0 12px 12px;
-        z-index: 1000;
+        display: none;
     }
 
     /* ナビゲーション */
@@ -190,7 +180,7 @@
     }
 
     .ball-button-container {
-        display: flex;
+        display: none;
         gap: 1rem;
         margin-top: 1.5rem;
         justify-content: center;
@@ -223,22 +213,23 @@
     .title {
         position: absolute;
         top: 420px;
-        left: 16vw;
+        left: 50%;
+        transform: translateX(-50%);
         font-size: 80px;
         font-weight: bold;
         pointer-events: none;
-        color: #C5E8F2
+        color: #C5E8F2;
     }
 
     .title2 {
         position: absolute;
         top: 510px;
-        left: 26.5vw;
+        left: 50%;
+        transform: translateX(-5%);
         color: #607D8B;
         font-size: 22px;
         font-weight: bold;
         pointer-events: none;
-        /* これでクリックを透過 */
     }
 
     .profile {
@@ -404,6 +395,9 @@
         flex-wrap: wrap;
         align-items: center;
         padding: 1.5rem;
+
+        flex-direction: column;
+        text-align: center;
     }
 
     .work.is-visible {
@@ -411,10 +405,6 @@
         transform: translateY(0);
     }
 
-    .work-left {
-        flex: 1 1 300px;
-        text-align: center;
-    }
 
     .work-img {
         width: 100%;
@@ -423,9 +413,14 @@
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
 
+
+    .work {
+        flex-direction: column;
+        text-align: center;
+    }
+
     .work-right {
-        flex: 2 1 400px;
-        padding: 2rem;
+        padding: 1.5rem;
     }
 
     .work-title {
@@ -462,7 +457,16 @@
         border-color: #4c7c87;
     }
 
+    @media (max-width: 768px) {
+        .work {
+            flex-direction: column;
+            text-align: center;
+        }
 
+        .work-right {
+            padding: 1.5rem;
+        }
+    }
 
     .contact {
         width: 85%;

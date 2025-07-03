@@ -3,18 +3,17 @@ const s3 = (p) => {
 
     // Cross クラス
     class Cross {
-        constructor(x, y, size) {
-            this.x = x;
-            this.y = y;
+        constructor(xRatio, yRatio, size) {
+            this.xRatio = xRatio; // 横比率
+            this.yRatio = yRatio; // 縦比率
             this.size = size;
             this.angle = 0;
             this.angularVelocity = 0;
 
-            // カラーパターンをランダムに選ぶ
             const colorSets = [
-                ['#AEEEEE', '#FFB6C1'], // 水色 × ピンク
-                ['#AEEEEE', '#FFDAB9'], // 水色 × オレンジ
-                ['#FFB6C1', '#FFDAB9']  // ピンク × オレンジ
+                ['#AEEEEE', '#FFB6C1'],
+                ['#AEEEEE', '#FFDAB9'],
+                ['#FFB6C1', '#FFDAB9']
             ];
             const choice = p.floor(p.random(colorSets.length));
             this.color1 = colorSets[choice][0];
@@ -22,6 +21,9 @@ const s3 = (p) => {
         }
 
         update() {
+            this.x = this.xRatio * p.width;
+            this.y = this.yRatio * p.height;
+
             let d = p.dist(p.mouseX, p.mouseY, this.x, this.y);
             if (d < this.size * 1.5) {
                 if (p.abs(this.angularVelocity) < 0.1) {
@@ -40,11 +42,9 @@ const s3 = (p) => {
 
             p.strokeWeight(4);
 
-            // 1本目の線
             p.stroke(this.color1);
             p.line(-this.size, -this.size, this.size, this.size);
 
-            // 2本目の線
             p.stroke(this.color2);
             p.line(this.size, -this.size, -this.size, this.size);
 
@@ -55,18 +55,18 @@ const s3 = (p) => {
     let crosses = [];
 
     p.setup = () => {
+
+
         // 背景の3Dキャンバス
         pg3D = p.createGraphics(p.windowWidth, 900, p.WEBGL);
         pg3D.clear();
 
-        // 前面の2Dキャンバス
         const cnv = p.createCanvas(p.windowWidth, 900);
         cnv.parent('canvas-container');
 
-        // キューブ投影中心
         const cubeCenterX = p.width / 2 + p.width / 7;
         const cubeCenterY = p.height / 2;
-        const cubeRadius = 200; // 避ける範囲の半径
+        const cubeRadius = 200;
 
         let tries;
         for (let i = 0; i < 10; i++) {
@@ -76,26 +76,41 @@ const s3 = (p) => {
                 x = p.random(50, p.width - 50);
                 y = p.random(50, p.height - 50);
                 tries++;
-                if (tries > 100) {
-                    break;
-                }
+                if (tries > 100) break;
             } while (
                 p.dist(x, y, cubeCenterX, cubeCenterY) < cubeRadius
             );
 
             crosses.push(new Cross(
-                x,
-                y,
+                x / p.width,
+                y / p.height,
                 p.random(15, 30)
             ));
         }
     };
 
     p.draw = () => {
-        // 3Dキャンバスをクリア
-        pg3D.clear();
+        // キャンバスの高さは固定だが、幅は動的
+        if (p.width !== p.windowWidth) {
+            //p.resizeCanvas(p.windowWidth, 900);
+            pg3D = p.createGraphics(p.windowWidth, 900, p.WEBGL);
+        }
 
-        pg3D.background("#fef6f9"); // ダブルシャープはNGなので修正
+
+        // スマホ幅なら無効
+        if (p.windowWidth <= 768) {
+            p.background("#fef6f9");
+
+            for (let c of crosses) {
+                c.update();
+                c.display();
+            }
+            return;
+        }
+
+
+        pg3D.clear();
+        pg3D.background("#fef6f9");
 
         pg3D.push();
         pg3D.translate(p.width / 7, 0, 0);
@@ -113,15 +128,18 @@ const s3 = (p) => {
         }
         pg3D.pop();
 
-        // 3Dを描画
         p.image(pg3D, 0, 0, p.width, p.height);
-
 
 
         for (let c of crosses) {
             c.update();
             c.display();
         }
+    };
+
+    p.windowResized = () => {
+        p.resizeCanvas(p.windowWidth, 900);
+        pg3D = p.createGraphics(p.windowWidth, 900, p.WEBGL);
     };
 };
 
