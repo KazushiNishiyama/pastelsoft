@@ -40,14 +40,14 @@ let myp5 = new p5((p) => {
         }
 
         window.addEventListener("resize", () => {
-            p.resizeCanvas(p.windowWidth, document.body.scrollHeight - 800);
+            p.resizeCanvas(document.documentElement.clientWidth, document.body.scrollHeight - 800);
         });
     };
 
     p.draw = function () {
         // キャンバスの高さは固定だが、幅は動的
-        if (p.width !== p.windowWidth) {
-            p.resizeCanvas(p.windowWidth, p.windowHeight);
+        if (p.width !== document.documentElement.clientWidth) {
+            p.resizeCanvas(document.documentElement.clientWidth, p.windowHeight);
         }
         // スマホ幅なら無効
         if (p.windowWidth <= 768) {

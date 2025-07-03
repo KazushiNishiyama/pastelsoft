@@ -58,10 +58,10 @@ const s3 = (p) => {
 
 
         // 背景の3Dキャンバス
-        pg3D = p.createGraphics(p.windowWidth, 900, p.WEBGL);
+        pg3D = p.createGraphics(document.documentElement.clientWidth, 900, p.WEBGL);
         pg3D.clear();
 
-        const cnv = p.createCanvas(p.windowWidth, 900);
+        const cnv = p.createCanvas(document.documentElement.clientWidth, 900);
         cnv.parent('canvas-container');
 
         const cubeCenterX = p.width / 2 + p.width / 7;
@@ -91,9 +91,9 @@ const s3 = (p) => {
 
     p.draw = () => {
         // キャンバスの高さは固定だが、幅は動的
-        if (p.width !== p.windowWidth) {
+        if (p.width !== document.documentElement.clientWidth) {
             //p.resizeCanvas(p.windowWidth, 900);
-            pg3D = p.createGraphics(p.windowWidth, 900, p.WEBGL);
+            pg3D = p.createGraphics(document.documentElement.clientWidth, 900, p.WEBGL);
         }
 
 
@@ -138,8 +138,8 @@ const s3 = (p) => {
     };
 
     p.windowResized = () => {
-        p.resizeCanvas(p.windowWidth, 900);
-        pg3D = p.createGraphics(p.windowWidth, 900, p.WEBGL);
+        p.resizeCanvas(document.documentElement.clientWidth, 900);
+        pg3D = p.createGraphics(document.documentElement.clientWidth, 900, p.WEBGL);
     };
 };
 

@@ -110,13 +110,26 @@
 
     html {
         scroll-behavior: smooth;
-        overflow-x: hidden
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    img,
+    video,
+    iframe {
+        max-width: 100%;
+        height: auto;
+        display: block;
     }
 
     /* bodyの行の高さをリセット */
     body {
         line-height: 1;
     }
+
+
 
     /* リストのマーカーを非表示 */
     ol,

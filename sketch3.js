@@ -53,7 +53,7 @@ const s2 = (p) => {
     let crosses = [];
 
     p.setup = () => {
-        const cnv = p.createCanvas(p.windowWidth, document.body.scrollHeight - 900);
+        const cnv = p.createCanvas(document.documentElement.clientWidth, document.body.scrollHeight - 900);
         cnv.parent('canvas-container3');
 
         for (let i = 0; i < 60; i++) {
@@ -79,7 +79,7 @@ const s2 = (p) => {
 
         // ウィンドウリサイズ
         window.addEventListener("resize", () => {
-            p.resizeCanvas(p.windowWidth, document.body.scrollHeight - 800);
+            p.resizeCanvas(document.documentElement.clientWidth, document.body.scrollHeight - 800);
         });
     };
 
