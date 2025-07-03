@@ -233,7 +233,8 @@
     }
 
     .profile {
-        width: 85%;
+        width: auto;
+        max-width: 100%;
         max-width: 900px;
         margin: 150px auto 0 auto;
         background: #ffffffcc;
@@ -325,7 +326,8 @@
     .skill {
         text-align: center;
         margin: 200px auto 0 auto;
-        width: 85%;
+        width: auto;
+        max-width: 100%;
         max-width: 900px;
         background: #ffffffcc;
         /* やさしい透明感 */
