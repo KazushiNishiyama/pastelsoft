@@ -73,16 +73,15 @@ const s2 = (p) => {
                 c.angularVelocity += p.random(-0.05, 0.05);
             }
         });
+
+        // ウィンドウリサイズ
+        window.addEventListener("resize", () => {
+            p.resizeCanvas(p.windowWidth, document.body.scrollHeight - 650);
+        });
     };
 
     p.draw = () => {
-        // キャンバスの高さは固定だが、幅は動的
-        if (p.width !== p.windowWidth) {
-            p.resizeCanvas(p.windowWidth, document.body.scrollHeight);
-            console.log("a");
-            console.log(document.body.scrollHeight);
-        }
-        p.resizeCanvas(p.windowWidth, document.body.scrollHeight - 900);
+
 
         p.background("#f7fbfc");
 
@@ -90,6 +89,8 @@ const s2 = (p) => {
             c.update();
             c.display();
         }
+
+
     };
 
     p.windowResized = () => {
