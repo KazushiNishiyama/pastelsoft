@@ -69,9 +69,12 @@ const s2 = (p) => {
 
         // スクロールイベントで加速度
         window.addEventListener("scroll", () => {
-            for (let c of crosses) {
-                c.angularVelocity += p.random(-0.05, 0.05);
+            if (p.windowWidth >= 769) {
+                for (let c of crosses) {
+                    c.angularVelocity += p.random(-0.05, 0.05);
+                }
             }
+
         });
 
         // ウィンドウリサイズ

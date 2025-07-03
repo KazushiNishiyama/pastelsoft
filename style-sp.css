@@ -365,7 +365,7 @@
     }
 
     .portfolio {
-        width: 60%;
+        width: 80%;
         margin: 0 auto;
         text-align: center;
         margin-top: 200px;
@@ -398,6 +398,7 @@
 
         flex-direction: column;
         text-align: center;
+
     }
 
     .work.is-visible {
@@ -457,16 +458,6 @@
         border-color: #4c7c87;
     }
 
-    @media (max-width: 768px) {
-        .work {
-            flex-direction: column;
-            text-align: center;
-        }
-
-        .work-right {
-            padding: 1.5rem;
-        }
-    }
 
     .contact {
         width: 85%;
