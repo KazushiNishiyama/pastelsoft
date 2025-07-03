@@ -110,6 +110,7 @@
 
     html {
         scroll-behavior: smooth;
+        overflow-x: hidden
     }
 
     /* bodyの行の高さをリセット */
