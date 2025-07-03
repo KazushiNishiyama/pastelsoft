@@ -76,7 +76,7 @@ const s2 = (p) => {
 
         // ウィンドウリサイズ
         window.addEventListener("resize", () => {
-            p.resizeCanvas(p.windowWidth, document.body.scrollHeight - 650);
+            p.resizeCanvas(p.windowWidth, document.body.scrollHeight - 800);
         });
     };
 

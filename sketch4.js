@@ -38,6 +38,10 @@ let myp5 = new p5((p) => {
             let fillColor = colorSets[colorChoice][p.floor(p.random(2))];
             return new Ball(x, p.random(-150, 150), fillColor);
         }
+
+        window.addEventListener("resize", () => {
+            p.resizeCanvas(p.windowWidth, document.body.scrollHeight - 800);
+        });
     };
 
     p.draw = function () {
