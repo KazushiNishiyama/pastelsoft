@@ -27,7 +27,10 @@ const s3 = (p) => {
             let d = p.dist(p.mouseX, p.mouseY, this.x, this.y);
             if (d < this.size * 1.5) {
                 if (p.abs(this.angularVelocity) < 0.1) {
-                    this.angularVelocity = p.random(-0.2, 0.2);
+                    if (p.windowWidth >= 768) {
+
+                        this.angularVelocity = p.random(-0.2, 0.2);
+                    }
                 }
             }
 
