@@ -229,7 +229,7 @@
         top: 420px;
         left: 50%;
         transform: translateX(-50%);
-        font-size: 80px;
+        font-size: 15vw;
         font-weight: bold;
         pointer-events: none;
         color: #C5E8F2;
@@ -237,13 +237,30 @@
 
     .title2 {
         position: absolute;
-        top: 510px;
+        top: 530px;
         left: 50%;
         transform: translateX(-5%);
         color: #607D8B;
-        font-size: 22px;
+        font-size: 4vw;
         font-weight: bold;
         pointer-events: none;
+    }
+
+    .title {
+        position: absolute;
+        top: 80vw;
+        /* 画面幅に比例 */
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 15vw;
+    }
+
+    .title2 {
+        position: absolute;
+        top: 98vw;
+        /* 大きさに応じて間隔を設定 */
+        left: 50%;
+        font-size: 4vw;
     }
 
     .profile {
