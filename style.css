@@ -525,4 +525,40 @@
         z-index: 10;
         pointer-events: none;
     }
+
+    .contact form {
+        max-width: 500px;
+        margin: 40px auto;
+        /* 上下40px、左右中央寄せ */
+        padding: 20px;
+        /* フォーム内部の余白 */
+        text-align: left;
+        /* オプション: 背景色 */
+        border-radius: 8px;
+        /* オプション: 角丸 */
+        /* オプション: 影 */
+    }
+
+    .contact form input,
+    .contact form textarea {
+        width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+        margin-bottom: 15px;
+        margin: 10px 0;
+    }
+
+    .contact form button {
+        display: block;
+        margin: 0 auto;
+        padding: 12px 24px;
+        background-color: #a4c7e0;
+        border: none;
+        cursor: pointer;
+    }
+
+    .contact form button:hover {
+        background-color: #89b3d4;
+    }
+
 }
