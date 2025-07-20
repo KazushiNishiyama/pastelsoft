@@ -62,8 +62,22 @@
     </div>
 
     <div class="skill" id="skill">
-        <h2 class="skill-title">SKILL</h2>
-        <img src="img/skill2.png" class="skill-img">
+        <h2 class="skill-title">ABOUT</h2>
+        <div class="skill-detail">
+            <p>私はUnityを中心に、インタラクティブコンテンツやゲーム開発を得意としています。<br>
+                業務ではJavaScriptを使ったフロントエンドやツール開発にも多く関わっています。<br>
+
+                特定の技術にこだわらず、「必要な技術は必要なときに学んで使う」というスタンスで、PythonやPHPをはじめとした他言語も状況に応じて使い分けています。<br>
+
+                これまでには、VR・MR開発や、Arduinoや各種センサーを使った組み込み系の開発にも携わり、そうしたハードウェアとの連携も含めてUnityで統合する案件も多く経験しています。<br>
+
+                試作・検証からリリースまで、フットワーク軽く対応できます。</p>
+            <p>C#/Javascript/Python/HTML/CSS</p>
+            <p>Unity</p>
+            <p>Arduino/Jetson/HoloLens2/Kinect v2/Azure Kinect/Meta Quest</p>
+            <p>OpenCV/Photon/Github</p>
+        </div>
+
     </div>
     <div class="portfolio" id="portfolio">
         <h2 class="portfolio-title">Portfolio</h2>
@@ -76,12 +90,69 @@
                 </div>
                 <div class="work-right">
                     <h2 class="work-title">SimArthur</h2>
-                    <p>合同会社 SimArthur のCTOとして、国立循環器病研究センターと共同で手術現場への導入を目指した循環動態シミュレーションソフトを開発。
-                        UIデザインとシステム開発を担当し、Webベースで高度な循環モデルを実装しました。
-                        循環動態アカデミーでデモ版をリリースし、有料会員の獲得にも貢献。</p>
+                    <p>合同会社 SimArthur のCTOとして、国立循環器病研究センターと共同で、手術現場への導入を視野に入れた循環動態シミュレーションソフトを開発しました。<br>
+                        本ソフトウェアは、Webブラウザ上で動作するインタラクティブなシミュレーションツールで、心拍出量、血圧、末梢抵抗などの循環パラメータをリアルタイムに操作・可視化可能な設計となっています。<br>
+                        JavaScriptベースで、ブラウザ内で高速に循環系の挙動を再現できる仕組みを実装しました。<br>
+
+                        私はCTOとしてプロジェクト全体の技術アーキテクチャの設計に加え、ユーザーインターフェースの設計と、数理モデルのWeb実装を主導しました。<br>
+                        また、デモ版は循環動態アカデミーでリリースされ、医師向けの教材として活用されるとともに、有料会員の獲得にも貢献しています。
+                    </p>
                     <p>2021年1月～</p>
                     <p>HTML/CSS/JavaScript/Wordpress</p>
                     <a href="https://simarthur.jp/" target="_blank">https://simarthur.jp/</a>
+                </div>
+            </div>
+            <div class="work">
+                <div class="work-left">
+                    <video src="img/moonart.mp4" class="work-img" controls></video>
+                </div>
+                <div class="work-right">
+                    <h2 class="work-title">来場者参加型インタラクティブアート展示（ムーンアートナイト下北沢）</h2>
+                    <p>屋外イベント「ムーンアートナイト下北沢」にて展示された、来場者参加型のデジタルアート作品を企画・開発しました。<br>
+                        来場者が液晶ペンタブレットで自由に描いたイラストを、そのままUnity上にリアルタイム反映し、月の周囲を周回するアニメーションとして演出する仕組みを構築。<br>
+
+                        来場者の描画内容は即時にアセットとして取り込み、座標配置や動き、エフェクトなどの演出をスクリプトで制御。<br>
+                        アート演出とUXの一体感を重視し、UI設計、描画ツールの構築、アニメーション制御を含むすべての実装・デザインを一貫して担当しました。<br>
+                        子どもから外国人まで多様な来場者に好評を博し、最大30分待ちの行列ができる盛況ぶりとなりました。
+                    </p>
+                    <p>2023年8月～9月</p>
+                    <p>ArtDirector/Unity Enginner</p>
+                    <p>Unity/C#</p>
+                    <a href="https://senrogai.com/event/moonartnightfes_details/" target="_blank">ムーンアートナイト下北沢</a>
+                </div>
+            </div>
+            <div class="work">
+                <div class="work-left">
+                    <video src="img/shooting.mp4" class="work-img" controls></video>
+                </div>
+                <div class="work-right">
+                    <h2 class="work-title">シューティングゲーム</h2>
+                    <p>展示イベント向けに開発したVRシューティングゲームです。Unityで制作し、企画から実装までを一貫して担当しました。<br>
+                        「HMDはかぶりたくないが、VRコントローラーの操作感は活かしたい」という要望を受け、Meta
+                        Quest2をHMDとしてではなく、センサーとしてのみ使用する変則的な構成を採用しました。<br>
+                        Quest2から取得したコントローラーの姿勢・入力情報は、専用のセンサーデータ収集用PCで受信し、Photon
+                        Realtimeを用いて別のゲームPCへ転送。そのデータをUnity側で受け取り、プレイヤーの動作に反映する仕組みを構築しました。<br>
+
+                        ヒット処理では、発射後の弾の軌道をリアルタイムに重力込みで予測し、弾道予測線を描画。<br>
+                        弾の初速度・角度・重力加速度を元に放物線を数値的にシミュレーションし、命中の目安として視覚化しました。<br>
+                        また、プレイヤーの状況に応じてBGMが変化する簡易なインタラクティブミュージックシステムも実装し、演出と没入感を高めています。</p>
+                    <p>2023年5月～8月</p>
+                    <p>ArtDirector/Planner/Unity Enginner</p>
+                    <p>Unity/C#/ShaderGraph</p>
+                </div>
+            </div>
+            <div class="work">
+                <div class="work-right">
+                    <h2 class="work-title">お盆型コントローラー連動ゲーム展示(錦糸町納涼祭)</h2>
+                    <p>錦糸町納涼祭にて展示されたインタラクティブゲームの開発を担当しました。<br>お盆を模したコントローラーに傾きセンサー（加速度センサー）を搭載し、Arduino経由でセンサーデータを取得。
+                        その傾きに応じてボールを転がすゲームをUnityで構築しました。<br>
+
+                        ハードウェア側では、Arduinoで加速度値を取得・平滑化し、シリアル通信でPCに送信。<br>
+                        Unity側ではそのデータを受信して物理挙動にリアルタイムで反映させる処理を実装しました。<br>
+                        ハード・ソフト一体での開発を通して、センサー連携と体験設計の両面に取り組んだプロジェクトです。</p>
+                    <p>2024年8月</p>
+                    <p>ArtDirector/Planner/Unity Enginner</p>
+                    <p>Unity/Arduino/Blender</p>
                 </div>
             </div>
             <div class="work">
@@ -90,12 +161,38 @@
                 </div>
                 <div class="work-right">
                     <h2 class="work-title">福祉施設開業支援サイト</h2>
-                    <p>福祉施設向けのセミナー予約システムを新たに構築。
-                        GoogleカレンダーAPIと連携し、空き日程を自動取得し、予約完了時にカレンダーへ書き込む仕組みを開発しました。
+                    <p>福祉施設の職員と利用者の利便性向上を目的として、セミナー予約の受付・管理を自動化するWebベースの予約システムを新たに構築しました。<br>
+                        Google Calendar
+                        APIと連携し、スタッフの空き日程を自動で取得。利用者が予約を確定すると、指定された日時にGoogleカレンダーへ自動で予定を登録する仕組みを実装しました。<br>
+                        また、予約前日にはリマインドメールを自動送信する機能も備えており、参加忘れを防止する工夫も取り入れています。<br>
                     </p>
                     <p>2025年6月</p>
                     <p>PHP/GoogleAPI/Wordpress</p>
                     <a href="https://fukusi.pro/" target="_blank">https://fukusi.pro/</a>
+                </div>
+            </div>
+            <div class="work">
+                <div class="work-right">
+                    <h2 class="work-title">起業家チャンネルスクレイピングツール</h2>
+                    <p>指定したキーワードや条件に基づいて、YouTube上の起業家チャンネルを自動で検索・抽出し、結果をGoogleスプレッドシートに出力するツールを開発しました。<br>
+                        検索結果ページやチャンネルのHTML構造を解析し、チャンネル名・URL・登録者数・概要などを取得。条件に合致するチャンネルだけを自動的にフィルタリングして記録します。<br>
+                        収集データの出力にはGoogle Sheets APIを使用し、スプレッドシートに自動で整形して書き込む仕組みを実装しました。</p>
+                    <p>2024年12月</p>
+                    <p>JavaScript</p>
+                </div>
+            </div>
+            <div class="work">
+                <div class="work-left">
+                    <img src="img/business.png" class="work-img">
+                </div>
+                <div class="work-right">
+                    <h2 class="work-title">ビジネスタイガーサミット</h2>
+                    <div class="work-border"></div>
+                    <p>テレビ番組の公式Webサイトを制作。<br>
+                        番組告知・情報発信のため、HTML/CSSによるコーディングと画像加工、公開後の更新作業を担当しました。</p>
+                    <p>2024年10月</p>
+                    <p>HTML/CSS</p>
+                    <a href="https://business-tigersummit.com/" target="_blank">https://business-tigersummit.com/</a>
                 </div>
             </div>
             <div class="work">
@@ -118,54 +215,189 @@
                 </div>
                 <div class="work-right">
                     <h2 class="work-title">株式会社ゴービヨンドネクスト</h2>
-                    <p>株式会社ゴービヨンドネクスト様のコーポレートサイトを制作。
+                    <p>株式会社ゴービヨンドネクスト様のコーポレートサイトを制作。<br>
                         急ぎの依頼に対応し、即日でデザインと構築を行い納品。</p>
                     <p>2024年11月</p>
                     <p>WordPress</p>
                     <a href="https://musicjam.jp/next/" target="_blank"> https://musicjam.jp/next/</a>
                 </div>
             </div>
+        </div>
+
+        <h2 class="portfolio-title" style="margin-top: 200px;">Personal Projects</h2>
+        <div class="portfolio-container">
             <div class="work">
-                <div class="work-left">
-                    <img src="img/business.png" class="work-img">
-                </div>
                 <div class="work-right">
-                    <h2 class="work-title">ビジネスタイガーサミット</h2>
-                    <div class="work-border"></div>
-                    <p>テレビ番組の公式Webサイトを制作。番組告知・情報発信のため、HTML/CSSによるコーディングと画像加工、公開後の更新作業を担当しました。</p>
-                    <p>2024年10月</p>
-                    <p>HTML/CSS</p>
-                    <a href="https://business-tigersummit.com/" target="_blank">https://business-tigersummit.com/</a>
-                </div>
-            </div>
-            <div class="work">
-                <div class="work-left">
-                    <video src="img/moonart.mp4" class="work-img" controls></video>
-                </div>
-                <div class="work-right">
-                    <h2 class="work-title">ムーンアートナイト下北沢</h2>
-                    <p>屋外イベント「ムーンアートナイト下北沢」にて展示した来場者参加型デジタルアート。
-                        来場者が描いた絵をリアルタイムでUnityに取り込み、月を周回する演出を開発。
-                        デザインから開発まで一貫して担当し、子供や外国人にも大変好評で、行列は最大30分待ちとなりました。
+                    <h2 class="work-title">カメラ映像を用いた血流評価装置</h2>
+                    <p>皮膚表面の微細な色変化を利用して血流状態を非接触で可視化する技術に着目し、Jetson Nanoと高感度カメラモジュールを用いた血流評価装置のプロトタイプを開発しました。<br>
+                        カメラから取得したRGB映像に対して、画素単位の輝度変動やカラーチャンネル（特に緑成分）を時系列で解析することで、脈波や血流の周期的な変動を抽出。ノイズ低減のための空間フィルタリングやバンドパスフィルタを施し、リアルタイムに可視化するシステムを構築しました。<br>
+
+                        私は本プロジェクトの初期開発フェーズにおいて、ハードウェア構成（Jetson本体・カメラ選定・接続構築）、画像処理アルゴリズムの設計、ならびに血流の視覚化UIの設計・実装を担当。Jetson上でのリアルタイム処理のため、処理負荷と応答性のバランスにも配慮しました。<br>
+
+                        本技術の有用性が評価され、その後、医療機器としての実用化を目指すスタートアップが立ち上がり、現在は事業として発展を続けています。私は現在プロジェクトからは離れていますが、初期プロトタイピングと技術基盤の構築に深く関与しました。
                     </p>
-                    <p>2023年8月～9月</p>
-                    <p>ArtDirector/Unity Enginner</p>
-                    <p>Unity/C#</p>
-                    <a href="https://senrogai.com/event/moonartnightfes_details/" target="_blank">ムーンアートナイト下北沢</a>
+                    <p>2021年</p>
+                    <p>Jetson/Linux/python</p>
+                </div>
+            </div>
+            <div class="work">
+                <div class="work-right">
+                    <h2 class="work-title">骨髄穿刺シミュレーターの開発（医療訓練用デバイス）</h2>
+                    <p>骨髄穿刺は訓練機会が限られ、初回から実臨床で行わざるを得ないケースも多いため、安全かつ反復可能な練習環境の提供を目的として、骨髄穿刺用の訓練シミュレーターを開発しました。<br>
+
+                        本システムは、人間の皮膚から骨髄に至るまでの多層構造を模した模擬素材を使用し、実際に穿刺針を挿入することでリアルな感覚を再現しています。<br>
+                        穿刺時の力加減はロードセルを用いて高精度に取得し、そのアナログ信号をArduinoでリアルタイムに処理・デジタル化したうえで、シリアル通信を通じてUnity側に送信。<br>
+
+                        Unity上では取得した穿刺力データをもとに、力の推移を可視化し、適正な圧力範囲かどうかを瞬時に判定します。<br>
+                        ユーザーの操作に対してリアルタイムで視覚的・数値的なフィードバックを提供し、正しい穿刺技術の習得を支援します。<br>
+                        さらに、訓練内容をスコアリングするゲーム形式を導入することで、学習意欲と再現性を高める設計としました。
+                    </p>
+                    <p>2021年</p>
+                    <p>Unity/Arduino</p>
+                </div>
+            </div>
+            <div class="work">
+                <div class="work-right">
+                    <h2 class="work-title">HoloLensを用いた乳房再建支援ARシステムの深度処理</h2>
+                    <p>乳房再建手術の支援を目的としたHoloLensベースのARシステムにおいて、「あとどれくらい乳房にインプラントを入れるべきか」を医師が視覚的に判断できるよう、色による量的ガイドを重畳表示する仕組みの開発に一部協力しました。<br>
+
+                        担当したのは、HoloLensからの深度データを取得し、それを重畳表示のベースとして処理する部分です。HoloLensの通常APIでは深度センサへのアクセスが制限されていたため、Research
+                        Modeに切り替えて独自にdepthストリームを取得。低レベルAPIを用いて、空間座標系との整合性を確保しながら、術野上の形状変化を評価できるようにしました。<br>
+
+                        得られた深度情報は、手術対象部位に対して量的な残差（例：目標ボリュームとの差分）を算出する形で処理し、AR空間上に色付きでリアルタイムに重畳表示することで、医師の判断を支援しています。</p>
+                    <p>2021年</p>
+                    <p>Unity/Hololens2/C#/C++</p>
+                </div>
+            </div>
+            <div class="work">
+                <div class="work-right">
+                    <h2 class="work-title">保育園DX化支援</h2>
+                    <p>スタンフォード大学のバイオデザイン手法を参考に、東京都内の保育園に2日間常駐し、業務観察と職員へのヒアリングを通じて現場の課題を調査しました。<br>
+                        現場で得た知見をもとに約100項目の課題を抽出し、重要度・緊急度・実現性をスコア化して優先順位を設定。その中でも特にニーズの高かった「連絡帳の電子化」や「業務引き継ぎの非効率化」といった課題に着目しました。<br>
+
+                        対応策として、保育士が日常的に使いやすいUIを重視したAndroidアプリを開発。連絡事項の記録や共有、引き継ぎ内容の管理が簡単に行えるように設計しました。<br>
+                        さらに、業務引き継ぎデータの共有には一部AWSを使用し、最小限のクラウド連携を導入しています。<br>
+
+                        この開発と調査を通じて提案した改善案の一部は、実際に保育園の施設改修時に正式に採用され、現場運用にも反映されています。</p>
+                    <p>Java/Android/AWS</p>
+                </div>
+            </div>
+            <div class="work">
+                <div class="work-right">
+                    <h2 class="work-title">筋ジストロフィー患者向けリハビリテーションゲーム</h2>
+                    <p>国立精神・神経医療研究センターからの依頼を受け、小児筋ジストロフィー患者向けのリハビリ支援用ゲームを開発しました。<br>
+                        筋力に制限がある患者に対して、過度な運動負荷を避けながらもリハビリ効果が得られるよう、医師・理学療法士とのヒアリングを重ね、運動強度・持続時間・動作の種類を精査した上で、設計に反映しました。<br>
+
+                        Kinect v2 を使用し、非接触でのモーションキャプチャを行い、上肢や体幹の基本的な動作を検出。ゲームは複数のミニゲーム形式で構成されており、身体の動きをスコア化・視覚化する仕組みを実装。
+                    </p>
+                    <p>2017年</p>
+                    <p>Director/ArtDirector/Planner/Unity Enginner</p>
+                    <p>Unity/KinectV2</p>
+                </div>
+            </div>
+            <div class="work">
+                <div class="work-right">
+                    <h2 class="work-title">SIDS予防のための非接触型呼吸モニタリングシステム（Azure Kinect）</h2>
+                    <p>乳幼児突然死症候群（SIDS）の予防を目的に、Azure Kinectの深度カメラを用いた非接触型呼吸モニタリングシステムを開発しました。<br>
+                        胸部の動きを深度画像から抽出し、ノイズ除去・領域分割処理を経て、C#およびOpenCVでリアルタイムに呼吸波形を生成。<br>
+                        さらに、呼吸停止の自動検出には畳み込みニューラルネットワーク（CNN）ベースのディープラーニングモデルを構築し、時系列データからの異常判定を高精度に実現しました。
+                    </p>
+                    <p>2021年</p>
+                    <p>Python/OpenCV</p>
+                </div>
+            </div>
+            <div class="work">
+                <div class="work-right">
+                    <h2 class="work-title">QRコードを用いた簡易型呼吸計測システム（RGBカメラ対応）</h2>
+                    <p>深度カメラのコストと導入ハードルを低減するため、一般的なRGBカメラを用いた簡易型の呼吸計測システムを設計しました。<br>
+                        布団上に貼付したQRコードの微細な動きを画像処理によりフレーム間で追跡し、コードの移動ベクトルから胸部の上下動を間接的に推定。<br>
+                        OpenCVを用いた特徴点抽出とトラッキング処理、バンドパスフィルタによる周期成分抽出により、ノイズを抑えた呼吸波形の復元を実現しました。
+                    </p>
+                    <p>2021年</p>
+                    <p>Python/OpenCV</p>
+
+                </div>
+            </div>
+            <div class="work">
+                <div class="work-right">
+                    <h2 class="work-title">マーカーレス呼吸波形推定システム（RGBカメラのみ）</h2>
+                    <p>マーカーの貼付が不要な、RGBカメラ単体で動作する呼吸波形推定システムを開発しました。<br>
+                        胸部領域の輝度値を画素単位またはブロック単位で時間変化として追跡し、周期的な輝度揺らぎから呼吸運動を抽出。<br>
+                        動きの大きさを直接検出せず、視覚的特徴の微小変動に着目することで、接触レスかつ自然な状態での観察を可能にしました。<br>
+                        解析には空間平均輝度と周波数ドメインでの成分抽出（FFT・バンドパスフィルタ）を組み合わせ、非侵襲かつ安定した推定精度を実現しています。</p>
+                    <p>2021年</p>
+                    <p>Python/OpenCV</p>
                 </div>
             </div>
             <div class="work">
                 <div class="work-left">
-                    <video src="img/shooting.mp4" class="work-img" controls></video>
+                    <video src="img/kokyu.mp4" class="work-img" controls></video>
                 </div>
                 <div class="work-right">
-                    <h2 class="work-title">シューティングゲーム</h2>
-                    <p>ゴービヨンド社からの依頼で展示イベント向けに開発したVRシューティングゲーム。
-                        Unityを用い、プランニング・デザイン・コーディングを担当。
-                        VRコントローラーによる操作に加え、インタラクティブミュージックの仕組みを実装し、臨場感のある体験を提供しました。</p>
-                    <p>2023年5月～8月</p>
-                    <p>ArtDirector/Planner/Unity Enginner</p>
-                    <p>Unity/C#/ShaderGraph</p>
+                    <h2 class="work-title">Wi-Fi信号による完全非接触型呼吸モニタリング</h2>
+                    <p>映像センサを用いず、Wi-Fi通信のチャネル状態情報（CSI: Channel State
+                        Information）の微細な揺らぎを用いて呼吸波形を復元する完全非接触型システムを開発しました。<br>
+                        呼吸に伴う胸部の変化が周囲の電波環境に与える影響を高感度で捉えるため、CSIをリアルタイムでロギングし、PCAやノイズ低減フィルタを用いた信号処理を実施。<br>
+                        得られた波形からピーク検出や周期性の抽出を行い、呼吸リズムを解析しました。<br>
+                        非視覚・非接触での生体センシングを可能とする、次世代のヘルスケアモニタリング技術として設計しています。</p>
+                    <p>2025年</p>
+                    <p>Arduino/Python</p>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="portfolio-title" style="margin-top: 200px;">Indie Projects</h2>
+        <div class="portfolio-container">
+            <div class="work">
+                <div class="work-left">
+                    <img src="img/datsui.png" class="work-img">
+                </div>
+                <div class="work-right">
+                    <h2 class="work-title">脱衣ポーカー</h2>
+                    <p>DLSiteの出品フローや審査基準、販売ページ構成などを実際に確認することを目的に、検証用として制作した脱衣ポーカーゲームです。<br>
+                        ゲーム内容は、あえてありきたりな構成にすることで企画コスト・実装コストを抑え、出品までの流れや必要な対応作業に集中できるよう設計しています。<br>
+                        UIはすべてアニメーション付きで実装。キャラクターのポーズ・表情・衣装ステートの切り替えにも対応し、最低限の演出は盛り込んでいます。<br>
+                        1週間という短期間で、企画・実装・動作確認まで通したことで、DLSiteに出品する際の全体像を把握できました。現在は出品準備中です。</p>
+                    <p>2025年7月</p>
+                    <p>Director/ArtDirector/Planner/Unity Enginner</p>
+                    <p>Unity</p>
+                </div>
+            </div>
+            <div class="work">
+                <div class="work-right">
+                    <h2 class="work-title">ElementElegy</h2>
+                    <p>チームで制作した3DアクションパズルRPGの開発において、ディレクターとして全体の進行管理やプランニングを担うとともに、パズルロジックの設計・実装、ユーザーインターフェースの挙動、ステージギミックの構築を担当しました。<br>
+                        シナリオ進行に応じたフラグ管理やイベントトリガーの設計、ステージごとの制御処理など、パズルRPGに必要なシステム全般の実装も行いました。<br>
+                        さらに、イベント頒布用にはシリアルコードによる認証機能を導入し、製品のライセンス管理を行いました。
+                    </p>
+                    <p>2022年1月～2023年12月</p>
+                    <p>Director/ArtDirector/Planner/Unity Enginner</p>
+                    <p>Unity/PHP</p>
+                </div>
+            </div>
+            <div class="work">
+                <div class="work-right">
+                    <h2 class="work-title">我儘な月</h2>
+                    <p>チームで企画・開発したオンライン対戦型ストラテジーゲームにおいて、ディレクターとして全体の進行管理と企画方針の策定を行うとともに、幅広い開発業務にも携わりました。<br>
+                        UnityとPhotonを用いてリアルタイム通信処理を構築し、プレイヤー同士の非同期対戦を実現。UI設計、戦略アルゴリズム、マッチング機能、さらにシリアルコードによる認証機能など、主要なシステムをすべて自作しました。<br>
+                        本作はインディーゲームイベントで頒布され、参加者からのフィードバックをもとに複数回のアップデートを実施し、継続的な改善を重ねました。
+                    </p>
+                    <p>2019年1月～2023年12月</p>
+                    <p>Director/ArtDirector/Planner/Unity Enginner</p>
+                    <p>Unity/PHP</p>
+                </div>
+            </div>
+            <div class="work">
+                <div class="work-right">
+                    <h2 class="work-title">CrossCreed</h2>
+                    <p>横スクロール型の2DアクションRPGをチームで制作しました。想定プレイ時間は約2時間で、シナリオ性とアクション性を両立させた中規模タイトルです。<br>
+                        私は本プロジェクトで、シナリオ設計やイベントフラグ管理、アイテム・ステータス管理、セーブ／ロード機能の実装をはじめ、戦闘システムや当たり判定、マップ遷移、UI設計など、ゲームの中核となる多くのシステムを担当しました。<br>
+                        また、敵キャラクターのアニメーションは専用ソフトを用いて自作し、演出面にもこだわって開発を行いました。BGMや効果音の実装・調整も含め、プレイヤーの没入感を高める工夫を随所に盛り込んでいます。<br>
+                        本作はインディーゲームイベントにて展示・販売を行い、来場者からのフィードバックを受けて複数回のアップデートも実施しました。
+                    </p>
+                    <p>2017年1月～2018年12月</p>
+                    <p>Director/ArtDirector/Planner/Unity Enginner</p>
+                    <p>Unity</p>
                 </div>
             </div>
         </div>
