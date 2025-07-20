@@ -61,10 +61,10 @@ const s3 = (p) => {
 
 
         // 背景の3Dキャンバス
-        pg3D = p.createGraphics(document.documentElement.clientWidth, 900, p.WEBGL);
+        pg3D = p.createGraphics(document.documentElement.clientWidth, 930, p.WEBGL);
         pg3D.clear();
 
-        const cnv = p.createCanvas(document.documentElement.clientWidth, 900);
+        const cnv = p.createCanvas(document.documentElement.clientWidth, 930);
         cnv.parent('canvas-container');
 
         const cubeCenterX = p.width / 2 + p.width / 7;
