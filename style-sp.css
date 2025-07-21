@@ -397,8 +397,21 @@
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     }
 
+    .skill p {
+        margin: 1rem 0;
+        color: #666;
+        line-height: 1.6;
+        text-align: left;
+
+    }
+
+    .skill-detail {
+        margin: 0 auto;
+        width: 100%;
+    }
+
     .portfolio {
-        width: 80%;
+        width: 90%;
         margin: 0 auto;
         text-align: center;
         margin-top: 200px;
@@ -454,7 +467,7 @@
     }
 
     .work-right {
-        padding: 1.5rem;
+        padding: 1.5rem 0;
     }
 
     .work-title {
